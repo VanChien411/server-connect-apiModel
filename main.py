@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 from gradio_client import Client
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 client = Client("ShynBui/Vector_db")
 
 @app.route("/predict", methods=["POST"])
