@@ -7,12 +7,12 @@ client = Client("ShynBui/Vector_db")
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.json
-    client = Client("ShynBui/Vector_db")
-    result = client.predict(
-		data,	# str  in 'quote' Textbox component
-		api_name="/predict"
-    )
-
+    # client = Client("ShynBui/Vector_db")
+    # result = client.predict(
+	# 	data,	# str  in 'quote' Textbox component
+	# 	api_name="/predict"
+    # )
+    result = data 
     if result:
 
         return jsonify(result), 200
