@@ -11,7 +11,8 @@ client = Client("ShynBui/Vector_db")
 def predict():
     data = request.json
     result = client.predict(
-		data,	# str  in 'quote' Textbox component
+		data.quote,	# str  in 'quote' Textbox component
+		data.history,	# str  in 'history' Textbox component
 		api_name="/predict"
     )
     if result:
