@@ -10,6 +10,7 @@ client = Client("ShynBui/Vector_db")
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.json
+    return data
     result = client.predict(
 		data.quote,	# str  in 'quote' Textbox component
 		data.history,	# str  in 'history' Textbox component
