@@ -5,7 +5,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
-client = Client("ShynBui/Vector_db")
+client = Client("ShynBui/Vector_db_v2")
 
 @app.route("/predict", methods=["POST"])
 def predict():
