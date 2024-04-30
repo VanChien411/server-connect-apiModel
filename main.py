@@ -5,15 +5,15 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
-client = Client("ShynBui/Vector_db_v2")
-
+# client = Client("ShynBui/Vector_db_v2")
+client = Client("ShynBui/Vector_db_v3")
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.json
     
     result = client.predict(
-		data['quote'],	# str  in 'quote' Textbox component
-		data['history'],	# str  in 'history' Textbox component
+		quote = data['quote'],	# str  in 'quote' Textbox component
+		history = data['history'],	# str  in 'history' Textbox component
 		api_name="/predict"
     )
     if result:
