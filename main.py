@@ -7,6 +7,10 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 # client = Client("ShynBui/Vector_db_v2")
 client = Client("ShynBui/Vector_db_v3")
+
+@app.route('/')
+def index():
+    return 'Welcome to backend botchat2024 Lê Văn Chiến!'
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.json
